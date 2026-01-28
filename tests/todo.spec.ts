@@ -19,6 +19,7 @@ test('should be able to add todo', async ({page, request, context}) => {
 test("should be able to delete a todo", async ({page, request, context})=> {
 
     const user = new User();
+    await page.pause();
     const registerPage = new RegisterPage(page, request, context);
     await registerPage.registerUsingTheAPI(user);
     const newTodoPage = new NewTodoPage(page, request);
